@@ -11,7 +11,7 @@
     </appender>
 
     <logger name="org.springframework" level="OFF"/>
-    <logger name="ro.jtonic.handson.springboot.docker" level="DEBUG"/>
+    <logger name="ro.jtonic.handson.springboot.docker" level="INFO"/>
 
     <root level="OFF">
         <appender-ref ref="STDOUT"/>

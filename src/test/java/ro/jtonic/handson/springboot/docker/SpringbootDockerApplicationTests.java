@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@SpringBootTest
+@SpringBootTest(properties = {"logging.level.ro.jtonic.handson.springboot.docker=ERROR"})
 @ExtendWith(SpringExtension.class)
 @ComponentTag
 class SpringbootDockerApplicationTests {
@@ -36,7 +36,10 @@ class SpringbootDockerApplicationTests {
 	
 	@Test
 	void testComponent() {
-		LOGGER.debug("Component test");
+		LOGGER.debug("[DEBUG]Component test");
+		LOGGER.info("[INFO]Component test");
+		LOGGER.warn("[WARN]Component test");
+		LOGGER.error("[ERROR]Component test");
 		Assertions.assertTrue(true);
 	}
 }
