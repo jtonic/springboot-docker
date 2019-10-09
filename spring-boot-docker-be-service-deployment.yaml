@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-boot-be
+spec:
+  selector:
+    app: spring-boot-be
+  ports:
+    - protocol: TCP
+      port: 8080
+      nodePort: 30001
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-be
+spec:
+  selector:
+    matchLabels:
+      app: spring-boot-be
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-boot-be
+    spec:
+      containers:
+        - name: spring-boot-be
+          image: jtonic/springboot-docker-zool-jre:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

@@ -46,6 +46,28 @@
         docker tag springboot-docker jtonic/springboot-docker:v1
         docker push jtonic/springboot-docker:v1
         ```
+      
+        - [x] create the kubernetes deployment/service for the backend.
+        
+        See the file `spring-boot-docker-be-service-deployment.yaml`
+        
+        > Initially we will expose the service publicly by using the `spec:type: NodePort` 
+        > later on, when we'll have a frontend, the fe will be of type of NodePort and be of type `ClusterIP`  
+
+        - [x] deploy and run the BE in the minikube cluster
+        
+        `kubectl create -f spring-boot-docker-be-service-deployment.yaml`
+        
+        - [x] call the REST endpoint using the default browser
+        
+        `minikube service spring-boot-be`
+        
+        - [x] or run curl `curl  $(minikube service spring-boot-be --url)` 
+        
+        > **Note** If something went wrong, and the mistakes is in the kubernetes service/deployment definition file, correct the mistake and replace/redeploy it.
+        > The command: `kubectl replace --force -f spring-boot-docker-be-service-deployment.yaml`. DON'T USE THIS IN PROD!!!
+
+        - **Clean up**
         
         - remove the tagged images
         ```bash
@@ -53,6 +75,7 @@
         docker image rm jtonic/springboot-docker
         docker image rm jtonic/springboot-docker:v1
         ``` 
+        - stop minikube `minikube stop`
         
         - removed unused images
         `docker image prune`
@@ -101,5 +124,11 @@
     - [Quick guide](https://www.baeldung.com/mapstruct)
     - [Official documentation](https://mapstruct.org/documentation/stable/reference/html/#introduction)
     - [Simple example with mapstruct/lombok/docker](https://hellokoding.com/mapping-jpa-hibernate-entity-and-dto-with-mapstruct/)
+    
+    
+- [ ] Deploy to Minikube via kubectl    
+    - [ ] a springboot microservice - type ClusterIP (internal IP)
+    - [ ] a vuejs frontent application (calling the backend endpoints) - type NodePort (external fix IP)
+- [ ] Same as above but deployed to AWS cluster     
     
 - [ ] inheritable ThreadLocal when a new child thread is created from http servlet request thread. 
