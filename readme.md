@@ -1,11 +1,14 @@
 # Objectives
 
-- [ ] Build and run a spring application in a docker container
+- [x] Build and run a spring application in a docker container
 
-    - [ ] jvm -> [Amazon Corretto](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/docker-install.html)
-    - [ ] documentation about sb application in docker
+    - [x] documentation about sb application in docker
         - [here](https://spring.io/guides/gs/spring-boot-docker/)
         - [here](https://spring.io/guides/topicals/spring-boot-docker)
+    - [x] jdk -> [Amazon Corretto](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/docker-install.html)
+    - [x] jre 
+        -> [Azul jre-11 alpine docker hub](https://hub.docker.com/r/azul/zulu-openjdk-alpine/tags)
+        -> [Azul jre/jdk home page](https://www.azul.com/downloads/zulu-community/)
 
     - How to build/run/test/publish the application?
     
@@ -58,6 +61,22 @@
         `docker run -d -p 8080:8080 --name springboot-docker jtonic/springboot-docker:v1`
         
         - test the application again (see above)
+        
+        > **Note:** As a piece of advice consider making a small image.
+        >
+        > The image size can be queried with the following command:
+        > 
+        >  `docker images jtonic/springboot-docker:v1  --format "{{.Repository}}:{{.Tag}} {{.Size}}"`
+        > 
+        > with zool jre 11
+        >  docker images springboot-docker-zool-jre  --format "{{.Repository}}:{{.Tag}} {{.Size}}"
+        >  springboot-docker-zool-jre:latest **151MB**
+        > 
+        > with amazon corretto jdk 11
+        > docker images jtonic/springboot-docker:v1  --format "{{.Repository}}:{{.Tag}} {{.Size}}"                                                                     master ✱
+        > jtonic/springboot-docker:v1 **514MB**
+        > 
+        > As you can see there is a huge difference 151 MB -> 514 MB
     
 - [x] incremental migration from junit4 to junit5 (kotlin project included)
 - [x] junit tests with custom logger level

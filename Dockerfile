@@ -1,4 +1,6 @@
-FROM amazoncorretto:11
+#FROM amazoncorretto:11
+# use zulu jr3 version because is based on alpine (smaller image size) and is LTS
+FROM azul/zulu-openjdk-alpine:11.0.4-jre
 VOLUME /tmp
 ARG DEPENDENCY=target/dependency
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
