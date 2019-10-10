@@ -132,3 +132,20 @@
 - [ ] Same as above but deployed to AWS cluster     
     
 - [ ] inheritable ThreadLocal when a new child thread is created from http servlet request thread. 
+
+- Cleaning up
+
+    - BE 
+        - [x] refactor project
+        - [ ] clean-up and refactor docker related configuration, clean up the old containers, images
+        - [ ] build the new image/tags
+        - [ ] run a new container from the new images
+        - [ ] push the new todo docker images (latest, v1)
+        - [ ] old the outdated/poorly named docker hub images
+        - [ ] remove old containers
+        - [ ] remove old pods, deployments, services from minikube
+        - [ ] add new pods, deployments, services
+        - [ ] test it deployed in minikube 
+
+    - FE (Vue.js, VueX, Vue router, Vue-RX, Axios, Quasar)
+        - TBD
