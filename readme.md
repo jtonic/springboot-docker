@@ -106,10 +106,10 @@
 - [x] spring boot 2 with custom logger level
     - The log level can be changed per springboot test class with 
     ```java
-    @SpringBootTest(properties = {"logging.level.${logger}=ERROR"})
+    @SpringBootTest(properties = {"logging.level.ro.jtonic.apps.todo=ERROR"})
     @ExtendWith(SpringExtension.class)
     @ComponentTag
-    class SpringbootDockerApplicationTests {  }  
+    class TodoApplicationTest {  }  
     ```
 - [x] (simple) use MapStruct for object mapping (for advanced usage see baeldung tutorials below):
     - See why:

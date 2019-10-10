@@ -1,4 +1,4 @@
-package ro.jtonic.handson.springboot.docker;
+package ro.jtonic.apps.todo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,19 +6,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ro.jtonic.handson.springboot.docker.model.domain.Person;
-import ro.jtonic.handson.springboot.docker.model.domain.PersonDTO;
-import ro.jtonic.handson.springboot.docker.model.mapping.PersonMapper;
+import ro.jtonic.apps.todo.model.domain.Person;
+import ro.jtonic.apps.todo.model.domain.PersonDTO;
+import ro.jtonic.apps.todo.model.mapping.PersonMapper;
 
 @SpringBootApplication
 @RestController
-public class SpringbootDockerApplication {
+public class TodoApplication {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootDockerApplication.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(TodoApplication.class);
 	
 	private PersonMapper personMapper;
 	
-	public SpringbootDockerApplication(PersonMapper personMapper) {
+	public TodoApplication(PersonMapper personMapper) {
 		
 		this.personMapper = personMapper;
 	}
@@ -33,6 +33,6 @@ public class SpringbootDockerApplication {
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootDockerApplication.class, args);
+		SpringApplication.run(TodoApplication.class, args);
 	}
 }

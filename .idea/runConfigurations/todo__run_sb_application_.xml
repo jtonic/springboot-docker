@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="springboot-docker [run sb application]" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="todo [run sb application]" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />

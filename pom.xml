@@ -8,11 +8,11 @@
 		<version>2.2.0.RC1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>ro.jtonic.handson</groupId>
-	<artifactId>springboot-docker</artifactId>
+	<groupId>ro.jtonic.apps</groupId>
+	<artifactId>todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-docker</name>
-	<description>Demo project for Spring Boot Docker</description>
+	<name>todo application</name>
+	<description>TODO application with spring 2.2+ (java 11), docker, kubernetes, minikube, AWS</description>
 
 	<properties>
 		<java.version>11</java.version>

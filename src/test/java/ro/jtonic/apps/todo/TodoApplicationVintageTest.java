@@ -1,4 +1,4 @@
-package ro.jtonic.handson.springboot.docker;
+package ro.jtonic.apps.todo;
 
 import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 @EnableJUnit4MigrationSupport
-class SpringbootDockerApplicationVintageTests {
+class TodoApplicationVintageTest {
 
 	@Test
 	void contextLoads() {

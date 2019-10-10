@@ -1,8 +1,8 @@
-package ro.jtonic.handson.springboot.docker.model.mapping;
+package ro.jtonic.apps.todo.model.mapping;
 
 import org.mapstruct.Mapper;
-import ro.jtonic.handson.springboot.docker.model.domain.Person;
-import ro.jtonic.handson.springboot.docker.model.domain.PersonDTO;
+import ro.jtonic.apps.todo.model.domain.Person;
+import ro.jtonic.apps.todo.model.domain.PersonDTO;
 
 /**
  * Created by Antonel Ernest Pazargic on 06/10/2019.

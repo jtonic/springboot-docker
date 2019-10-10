@@ -1,4 +1,4 @@
-package ro.jtonic.handson.springboot.docker.model.domain;
+package ro.jtonic.apps.todo.model.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

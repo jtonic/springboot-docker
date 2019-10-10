@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="springboot-docker [component tests]" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="todo [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -10,8 +10,7 @@
           </option>
           <option name="goals">
             <list>
-              <option value="test" />
-              <option value="-Dgroups=component" />
+              <option value="spring-boot:run" />
             </list>
           </option>
           <option name="pomFileName" value="pom.xml" />

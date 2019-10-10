@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="component tests" type="JUnit" factoryName="JUnit">
-    <module name="springboot-docker" />
+    <module name="todo" />
     <shortenClasspath name="MANIFEST" />
     <extension name="coverage">
       <pattern>

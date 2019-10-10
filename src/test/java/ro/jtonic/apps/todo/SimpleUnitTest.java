@@ -1,4 +1,4 @@
-package ro.jtonic.handson.springboot.docker;
+package ro.jtonic.apps.todo;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

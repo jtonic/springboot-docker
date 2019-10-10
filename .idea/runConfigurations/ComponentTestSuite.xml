@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ComponentTestSuite" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-    <module name="springboot-docker" />
+    <module name="todo" />
     <shortenClasspath name="MANIFEST" />
     <extension name="coverage">
       <pattern>
@@ -8,8 +8,8 @@
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <option name="PACKAGE_NAME" value="ro.jtonic.handson.springboot.docker" />
-    <option name="MAIN_CLASS_NAME" value="ro.jtonic.handson.springboot.docker.ComponentTestSuite" />
+    <option name="PACKAGE_NAME" value="ro.jtonic.apps.todo" />
+    <option name="MAIN_CLASS_NAME" value="ro.jtonic.apps.todo.ComponentTestSuite" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <option name="PARAMETERS" value="" />

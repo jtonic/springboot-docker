@@ -1,4 +1,4 @@
-package ro.jtonic.handson.springboot.docker;
+package ro.jtonic.apps.todo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -11,12 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@SpringBootTest(properties = {"logging.level.ro.jtonic.handson.springboot.docker=ERROR"})
+@SpringBootTest(properties = {"logging.level.ro.jtonic.apps.todo=ERROR"})
 @ExtendWith(SpringExtension.class)
 @ComponentTag
-class SpringbootDockerApplicationTests {
+class TodoApplicationTest {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootDockerApplicationTests.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(TodoApplicationTest.class);
 	
 	private static String[][] personInfoProvider() {
 		return new String[][] {
