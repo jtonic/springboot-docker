@@ -16,10 +16,10 @@
         `mvn package`
 
         - build the maven image
-        `docker build -t springboot-docker .`
+        `docker build -t todo-zulu-alpine-jre-11 .`
 
         - start the container and run the application
-        `docker run -d -p 8080:8080 --name springboot-docker springboot-docker`
+        `docker run -d -p 8080:8080 --name todo-zulu-alpine-jre-11 todo-zulu-alpine-jre-11`
 
         - test the docker container is running
         `docker ps`
@@ -28,23 +28,23 @@
         `curl http://localhost:8080`
         
         - stop the container
-        `docker container stop springboot-docker`
+        `docker container stop todo-zulu-alpine-jre-11`
 
         - remove the container
-        `docker container rm springboot-docker`
+        `docker container rm todo-zulu-alpine-jre-11`
        
         - check if it was successfully removed
-        `docker container ps -a | grep -i springboot-docker --color=always`
+        `docker container ps -a | grep -i todo-zulu-alpine-jre-11 --color=always`
         
         - publish the image
         ```bash
         docker login
         # publish latest version
-        docker tag springboot-docker jtonic/springboot-docker
-        docker push jtonic/springboot-docker
+        docker tag todo-zulu-alpine-jre-11 jtonic/todo-zulu-alpine-jre-11
+        docker push jtonic/todo-zulu-alpine-jre-11
         # latest version taged as v1
-        docker tag springboot-docker jtonic/springboot-docker:v1
-        docker push jtonic/springboot-docker:v1
+        docker tag todo-zulu-alpine-jre-11 jtonic/todo-zulu-alpine-jre-11:v1
+        docker push jtonic/todo-zulu-alpine-jre-11:v1
         ```
       
         - [x] create the kubernetes deployment/service for the backend.
@@ -69,11 +69,20 @@
 
         - **Clean up**
         
+        - show running container
+        `docker ps`
+        
+        - stop container 
+        `docker stop todo-zulu-alpine-jre-11`
+        
+        - remove container 
+        `docker rm todo-zulu-alpine-jre-11`
+        
         - remove the tagged images
         ```bash
-        docker image rm springboot-docker
-        docker image rm jtonic/springboot-docker
-        docker image rm jtonic/springboot-docker:v1
+        docker image rm todo-zulu-alpine-jre-11
+        docker image rm jtonic/todo-zulu-alpine-jre-11
+        docker image rm jtonic/todo-zulu-alpine-jre-11:v1
         ``` 
         - stop minikube `minikube stop`
         
@@ -81,7 +90,7 @@
         `docker image prune`
         
         - run the remote docker image (for production it is mandatory to run a version)
-        `docker run -d -p 8080:8080 --name springboot-docker jtonic/springboot-docker:v1`
+        `docker run -d -p 8080:8080 --name todo-zulu-alpine-jre-11 jtonic/todo-zulu-alpine-jre-11:v1`
         
         - test the application again (see above)
         
@@ -89,11 +98,11 @@
         >
         > The image size can be queried with the following command:
         > 
-        >  `docker images jtonic/springboot-docker:v1  --format "{{.Repository}}:{{.Tag}} {{.Size}}"`
+        >  `docker images jtonic/todo-zulu-alpine-jre-11:v1  --format "{{.Repository}}:{{.Tag}} {{.Size}}"`
         > 
         > with zool jre 11
-        >  docker images springboot-docker-zool-jre  --format "{{.Repository}}:{{.Tag}} {{.Size}}"
-        >  springboot-docker-zool-jre:latest **151MB**
+        >  docker images todo-zulu-alpine-jre-11  --format "{{.Repository}}:{{.Tag}} {{.Size}}"
+        >  todo-zulu-alpine-jre-11:latest **151MB**
         > 
         > with amazon corretto jdk 11
         > docker images jtonic/springboot-docker:v1  --format "{{.Repository}}:{{.Tag}} {{.Size}}"                                                                     master ✱
@@ -133,19 +142,18 @@
     
 - [ ] inheritable ThreadLocal when a new child thread is created from http servlet request thread. 
 
-- Cleaning up
-
-    - BE 
-        - [x] refactor project
-        - [ ] clean-up and refactor docker related configuration, clean up the old containers, images
-        - [ ] build the new image/tags
-        - [ ] run a new container from the new images
-        - [ ] push the new todo docker images (latest, v1)
-        - [ ] old the outdated/poorly named docker hub images
-        - [ ] remove old containers
-        - [ ] remove old pods, deployments, services from minikube
-        - [ ] add new pods, deployments, services
-        - [ ] test it deployed in minikube 
+## Temporarily action items
+    - detach the springboot-docker from the VCS
+    - delete the repository from github Tony
+    - create a new directory - todo
+    - move springboot-docker inside todo
+    - rename springboot-docker to fe
+    - push todo directory in github
+    - create a fe directory undee
 
     - FE (Vue.js, VueX, Vue router, Vue-RX, Axios, Quasar)
         - TBD
+
+## __Notes:__
+
+- use `kubectl get ` command with `-o wide` option to see further information 

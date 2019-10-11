@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: todo-be
-          image: jtonic/springboot-docker-zool-jre:v1
+          image: jtonic/todo-zulu-alpine-jre-11:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
